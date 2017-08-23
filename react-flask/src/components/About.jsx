@@ -11,36 +11,32 @@ var About = React.createClass({
           <div className="modal-content">
           <div className="modal-header">
         <button type="button" className="close" data-dismiss="modal">&times;</button>
-        <h4 className="modal-title">About Blackwood energy system</h4>
+        <h4 className="modal-title">About the Project</h4>
       </div>
-      <div className="modal-body" id="aboutText">
-      <p>As a part of Local Energy Challenge Fund (LECF), Blackwood Home & Cares alongside with Scene Connect, have designed and implement an innovative energy system in Broom Court, Stirling. The system utilises rooftop solar PV, 111,3kWp capacity, to supply the buildings, electrical vehicles, and dynamically managed battery storage and supply, controlled via energy optimisation system. </p>
-      <p>Blackwood project intents to be used as pilot for this new type of energy systems, offering a greener and cheaper energy and transport. The pioneering technology offering an example of how to reduce operating costs, improve performance of vehicle fleets, and reduce CO2 emissions.</p>
-      <p>The smart control system is designed to optimize the use of the generated energy to the buildings and the EV chargers and store the surplus, in a way that grid energy import is minimised. For this purposes, Cloud Solar smart system have been integrated into the system to monitor the energy flow balance. </p>
-      <p>Real data from Broom Court facilities are broadcasted here, in an effort to increase the public awareness of the best use of Renewable Energy in an affordable and ecological way. </p>
+      <div className="modal-body" id="aboutText1">
+      <p>In early 2017 Broom Court Care Home in Stirling was fitted out with an innovative renewable energy system. The project was designed by Blackwood and local energy consultancy Scene with Emtec chosen as the principle contractor, and funding was provided by Blackwood and the Scottish Government’s Low Carbon Infrastructure Transition Programme. The project comprises 111 kW of solar pv and 128 kWh of electrical storage, as well an electric car and charging infrastructure – with potential for further cars to be added in the future.</p>
+      <p>The premise of the project was that current transport arrangements are burdensome to the care home sector, both in terms of logistics and costs. Logistically, care home staff that work in the community either have to bring their own vehicles to work, which limits recruitment options for care home operators and costs a great deal in terms of payments for mileage, or they have to take public transport to their appointments – which costs a great deal of time. We wanted to prove the benefits of utilising electric vehicles; meaning that staff didn’t have to bring their cars to work as much, whilst costs to the care home would also reduce. The next step was to think about creating our own electricity for the car, to make our whole system self-sufficient.</p>
+      <p>Our roof-top solar pv systems powers the care home during the day with any excess generation stored in our battery array. Energy flows to the electric vehicle from either the solar or the batteries. The batteries also act as an Uninterruptible Power Supply for the care home. The system is also connected to the national electricity grid, although we are trying to minimise ‘grid export’ as far as possible.</p>
+      <p>We expect that 50% of the care home’s electricity demand will be met through the new renewable energy system, whilst the electric car will be fully charged by the solar pv on most days. Live data from the system is shown in the dynamic schematic on this website.</p>
+      </div>
+      <div className="modal-header">
+    <h4 className="modal-title">Could we Follow Suit?</h4>
+  </div>
+    <div className="modal-body" id="aboutText2">
+      <p>The Broom Court project brings together relatively mature technologies into a system configuration. Solar PV and electric cars are now established technologies that can be highly cost effective in environments that require fairly heavy and consistent use of electricity and vehicles, such as care homes. The most novel technology in our system, battery storage, is rapidly reducing in price and is the key to providing a genuine local energy system, as excesses and shortfalls in energy generation can be smoothed out.</p>
+      <p>Due to high costs of battery storage at present some grant funding was required to make this project financially viable. However, the costs reductions of battery technology are expected to be tremendous over the next few years, as they have been for solar pv over the past 10 years. Very soon projects like ours will financially viable in a range of settings such as ours. </p>
+      <p>Please do get in touch to find out more about our project journey and how you can follow a similar path.</p>
+       {/*<img className="aboutImg"> </img>
        <img className="aboutImg"> </img>
-       <img className="aboutImg"> </img>
-       <img className="aboutImg"> </img>
-
+       <img className="aboutImg"> </img>*/}
+       <button type="button" className="" data-dismiss="modal">Close</button>
+       </div>
       </div>
 
           </div>
          </div>
       </div>
-
-      {/*}<div id="aboutContent" className="collapse">
-        <div id="aboutText" className="col-md-6">
-          <h3 >About Blackwood energy system</h3>
-          <p>As a part of Local Energy Challenge Fund (LECF), Blackwood Home & Cares alongside with Scene Connect, have designed and implement an innovative energy system in Broom Court, Stirling. The system utilises rooftop solar PV, 111,3kWp capacity, to supply the buildings, electrical vehicles, and dynamically managed battery storage and supply, controlled via energy optimisation system. </p>
-          <p>Blackwood project intents to be used as pilot for this new type of energy systems, offering a greener and cheaper energy and transport. The pioneering technology offering an example of how to reduce operating costs, improve performance of vehicle fleets, and reduce CO2 emissions.</p>
-          <p>The smart control system is designed to optimize the use of the generated energy to the buildings and the EV chargers and store the surplus, in a way that grid energy import is minimised. For this purposes, Cloud Solar smart system have been integrated into the system to monitor the energy flow balance. </p>
-          <p>Real data from Broom Court facilities are broadcasted here, in an effort to increase the public awareness of the best use of Renewable Energy in an affordable and ecological way. </p>
-       </div>
-       <div className="col-md-6">
-        <img className="aboutImg"> </img>
-       </div>
-     </div>*/}
-     </div>
+    
    )}
 
 })
