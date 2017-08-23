@@ -48,7 +48,7 @@ var Animation = React.createClass({
       connection.onmessage = function (e) {
           var jsonData = JSON.parse(e.data);
           that.handlePushMessage(jsonData);
-          console.log(jsonData.PowerConsumption);
+          console.log(jsonData);
       };
   },
   handlePushMessage: function(data) {
