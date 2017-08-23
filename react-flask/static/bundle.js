@@ -11224,7 +11224,7 @@ var Animation = _react2.default.createClass({
     connection.onmessage = function (e) {
       var jsonData = JSON.parse(e.data);
       that.handlePushMessage(jsonData);
-      console.log(jsonData.PowerConsumption);
+      console.log(jsonData);
     };
   },
   handlePushMessage: function handlePushMessage(data) {
