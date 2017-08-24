@@ -21,11 +21,11 @@ function charger(data){
       state='charger'
     }
     return state;
-    console.log(state);
+
 }
 
 function textConstructor(data){
-  return data.toFixed(0) + " kW";
+  return data.toFixed(0) + " W";
 }
 
 var mainColors = {yellow:'#DAD34A',green:'#8BC53F',greenblue:'#02968C',blue:"#2E3191", red:'#ee0000' };
@@ -33,8 +33,12 @@ var mainColors = {yellow:'#DAD34A',green:'#8BC53F',greenblue:'#02968C',blue:"#2E
 var Animation = React.createClass({
   getInitialState: function() {
         return {
-            consumption: "- kW",
-            batteryState: "20",
+            consumption: "- W",
+            generation:"- W",
+            batteryTitle: "-%",
+            kettles:"0 TVs!",
+            grid:'- W',
+
             generationColor: mainColors.blue,
             consumptionColor: mainColors.yellow,
             gridColor:mainColors.greenblue,
@@ -55,28 +59,33 @@ var Animation = React.createClass({
     this.setState({
                 generation: textConstructor(data.SolarYield),
                 consumption: textConstructor(data.PowerConsumption),
-                batteryflow: textConstructor(data.BatteryFlow),
-                grid: textConstructor(data.Grid),
+                kettles : Math.round(data.SolarYield /162) + " TVs!",
 
-                gridTitle: data.Grid<0? "Importing": "Exporting",
-                batteryTitle: data.BatteryFlow<0? "Discharging": "Charging",
+                grid: textConstructor((data.Grid*(-1))),
 
-                gridColor: data.Grid <0 ? mainColors.red : mainColors.greenblue,
-                batteryColor: data.BatteryFlow <0 ? mainColors.red  : mainColors.green,
+                gridTitle: data.Grid>0? "Importing": "Exporting",
+                batteryTitle: Math.round(data.BatteryStatus) + "%",
 
-                batteryStatus: data.BatteryStatus*0.42,
-                batteryState:charger(data.BatteryFlow),
+                gridColor: data.Grid >0 ? mainColors.red : mainColors.greenblue,
+                batteryColor: data.BatteryStatus <50 ? mainColors.red : mainColors.green,
+
+
+
+                batteryStatus:(data.BatteryStatus/100) * 42,
                 generationState: charger(data.SolarYield),
                 consumptionState: charger(data.PowerConsumption),
                 gridState: charger(data.Grid),
-                sunState: data.SolarYield<=0 ? " " : "sunpulse"
+                sunState: data.SolarYield<=0 ? " " : "sunpulse",
+                date: data.UnixTime
             });
   },
 
   render:function(){
+    var timestamp=new Date(this.state.date*1000);
+    var date= 'Last update: ' + timestamp.toLocaleString("en-GB");
    return(
-     <svg id='animation' width="960px" height="600px" viewBox="0 0 960 610" preserveAspectRatio="none" style={background}>
 
+     <svg id='animation' width="960px" height="600px" viewBox="0 0 960 610" preserveAspectRatio="none" style={background}>
      <defs>
         <linearGradient id="yellowGradient">
           <stop offset="5%" stopColor="#F60" />
@@ -91,8 +100,9 @@ var Animation = React.createClass({
 	    <Sun sunPulse={this.state.sunState}/>
         <TextUpdate
           generation={this.state.generation}
+          kettles = {this.state.kettles}
           consumption={this.state.consumption}
-          batteryflow ={this.state.batteryflow}
+
           grid = {this.state.grid}
 
           gridTitle={this.state.gridTitle}
@@ -106,12 +116,12 @@ var Animation = React.createClass({
         <Paths
           generationColor={this.state.generationColor}
           consumptionColor={this.state.consumptionColor}
-          batteryColor={this.state.batteryColor}
           gridColor={this.state.gridColor}
+          batteryColor={this.state.batteryColor}
 
           generationState={this.state.generationState}
           consumptionState={this.state.consumptionState}
-          batteryState={this.state.batteryState}
+
           gridState={this.state.gridState}
           />
 
@@ -119,10 +129,11 @@ var Animation = React.createClass({
         <g id ="icons">
           <EVIcon charge={this.state.consumptionState}/>
           <LampIcon charge={this.state.consumptionState}/>
-          <BatteryIcon charge= {this.state.batteryStatus} colorChange={this.state.batteryColor}/>
+
+          <BatteryIcon charge= {this.state.batteryStatus} colorChange = {this.state.batteryColor}/>
           <GridIcon charge= {this.state.gridState} colorChange={this.state.gridColor}/>
         </g>
-
+        <text x="20" y="600">{date}</text>
      </svg>
     )
   }

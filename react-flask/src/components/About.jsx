@@ -36,7 +36,7 @@ var About = React.createClass({
           </div>
          </div>
       </div>
-    
+
    )}
 
 })
