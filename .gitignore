@@ -1,4 +1,4 @@
 .DS_Store
 venv
 react-flask/node_modules
-build/bundle.js
+react-flask/static/bundle.js
