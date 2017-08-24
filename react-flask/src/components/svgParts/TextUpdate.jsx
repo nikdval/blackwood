@@ -31,7 +31,8 @@ var TextUpdate = React.createClass({
      </g>
      <text id="XMLID_282_" transform="matrix(1 0 0 1 871.6614 205.343)" className="greysmall">Grid</text>
      <text id="XMLID_283_" transform="matrix(1 0 0 1 430 530)" className="greysmall">EV charger</text>
-     <text id="XMLID_284_" transform="matrix(1 0 0 1 635 410)" className="greysmall">Batteries</text>
+     <text id="XMLID_284_" transform="matrix(1 0 0 1 635 417.5486)" className="greysmall">Batteries</text>
+
      </g>
 
    )}

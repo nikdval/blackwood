@@ -11995,7 +11995,7 @@ var TextUpdate = _react2.default.createClass({
       ),
       _react2.default.createElement(
         'text',
-        { id: 'XMLID_284_', transform: 'matrix(1 0 0 1 635 410)', className: 'greysmall' },
+        { id: 'XMLID_284_', transform: 'matrix(1 0 0 1 635 417.5486)', className: 'greysmall' },
         'Batteries'
       )
     );
