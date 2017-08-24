@@ -25,7 +25,7 @@ module.exports = {
       test: /\.css$/,
       loader: 'style-loader!css-loader'
       },{
-        test: /\.(jpe?g|png|gif|svg)$/,
+        test: /\.(jpe?g|png|gif|svg|tif)$/,
         //loaders: ['url', 'image-webpack']
         loader: "file-loader"
       // loaders:[  'file?hash=sha512&digest=hex&name=[hash].[ext]',

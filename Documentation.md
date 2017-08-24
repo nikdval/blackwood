@@ -9,12 +9,12 @@ Grey fleet to green fleet
 /*install packages*/
 4. cd (go to the saved folder greewood)
 5. pip install -r requirements.txt
-6. pip install requests
 
 /*alternative manually*/
 pip install flask-socketio
 pip install git+https://github.com/Pithikos/python-websocket-server
 pip install websocket-server
+pip install requests
 
 /*React instalation*/
 6. npm install -g webpack

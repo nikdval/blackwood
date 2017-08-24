@@ -21,7 +21,8 @@ body {
 
 /*Header - Footer*/
 header, footer {
-    background-color: #58585A;
+    /*background-color: #58585A;*/
+		background-color: #939393;
     border-radius: 15px;
 }
 header{
@@ -29,8 +30,12 @@ header{
     height: 140px;
 }
 footer{
-    height: 60px;
-    padding-right: 20px;
+    height: 100px;
+    padding: 10px;
+}
+.logoSup{
+	height: 35px;
+	margin-right: 8%;
 }
 /* Navbar*/
 .navbar{
@@ -170,8 +175,9 @@ background-position:center;
     h3{
         font-size: 20px;
     }
-#logo-b{
-        height: 60px;
+.logoSup{
+        height: 30px;
+				
     }
     .navbar .navbar-nav>li{
     border-right:none;
@@ -184,8 +190,8 @@ background-position:center;
 	h3{
 			font-size: 15px;
 	}
-	#logo-b{
-	        height: 40px;
+	.logoSup{
+	        height: 20px;
 	    }
 			header{
 				height:80px;
