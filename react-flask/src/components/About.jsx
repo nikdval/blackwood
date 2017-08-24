@@ -4,7 +4,7 @@ var About = React.createClass({
   render:function(){
    return(
      <div id="about">
-      <button type="button" className="btn btn-about pull-right" data-toggle="modal" data-target="#myModal">To Learn More</button>
+      <button type="button" className="btn btn-about pull-right" data-toggle="modal" data-target="#myModal">Learn More</button>
       <div className="modal fade" id="myModal" role="dialog">
          <div className="modal-dialog">
           {/* Modal content-->*/}
@@ -36,7 +36,7 @@ var About = React.createClass({
           </div>
          </div>
       </div>
-    
+
    )}
 
 })

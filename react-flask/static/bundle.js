@@ -11050,7 +11050,7 @@ var About = _react2.default.createClass({
       _react2.default.createElement(
         "button",
         { type: "button", className: "btn btn-about pull-right", "data-toggle": "modal", "data-target": "#myModal" },
-        "To Learn More"
+        "Learn More"
       ),
       _react2.default.createElement(
         "div",
@@ -11072,46 +11072,64 @@ var About = _react2.default.createClass({
               _react2.default.createElement(
                 "h4",
                 { className: "modal-title" },
-                "About Blackwood energy system"
+                "About the Project"
               )
             ),
             _react2.default.createElement(
               "div",
-              { className: "modal-body", id: "aboutText" },
+              { className: "modal-body", id: "aboutText1" },
               _react2.default.createElement(
                 "p",
                 null,
-                "As a part of Local Energy Challenge Fund (LECF), Blackwood Home & Cares alongside with Scene Connect, have designed and implement an innovative energy system in Broom Court, Stirling. The system utilises rooftop solar PV, 111,3kWp capacity, to supply the buildings, electrical vehicles, and dynamically managed battery storage and supply, controlled via energy optimisation system. "
-              ),
-              _react2.default.createElement(
-                "p",
-                null,
-                "Blackwood project intents to be used as pilot for this new type of energy systems, offering a greener and cheaper energy and transport. The pioneering technology offering an example of how to reduce operating costs, improve performance of vehicle fleets, and reduce CO2 emissions."
+                "In early 2017 Broom Court Care Home in Stirling was fitted out with an innovative renewable energy system. The project was designed by Blackwood and local energy consultancy Scene with Emtec chosen as the principle contractor, and funding was provided by Blackwood and the Scottish Government\u2019s Low Carbon Infrastructure Transition Programme. The project comprises 111 kW of solar pv and 128 kWh of electrical storage, as well an electric car and charging infrastructure \u2013 with potential for further cars to be added in the future."
               ),
               _react2.default.createElement(
                 "p",
                 null,
-                "The smart control system is designed to optimize the use of the generated energy to the buildings and the EV chargers and store the surplus, in a way that grid energy import is minimised. For this purposes, Cloud Solar smart system have been integrated into the system to monitor the energy flow balance. "
+                "The premise of the project was that current transport arrangements are burdensome to the care home sector, both in terms of logistics and costs. Logistically, care home staff that work in the community either have to bring their own vehicles to work, which limits recruitment options for care home operators and costs a great deal in terms of payments for mileage, or they have to take public transport to their appointments \u2013 which costs a great deal of time. We wanted to prove the benefits of utilising electric vehicles; meaning that staff didn\u2019t have to bring their cars to work as much, whilst costs to the care home would also reduce. The next step was to think about creating our own electricity for the car, to make our whole system self-sufficient."
               ),
               _react2.default.createElement(
                 "p",
                 null,
-                "Real data from Broom Court facilities are broadcasted here, in an effort to increase the public awareness of the best use of Renewable Energy in an affordable and ecological way. "
+                "Our roof-top solar pv systems powers the care home during the day with any excess generation stored in our battery array. Energy flows to the electric vehicle from either the solar or the batteries. The batteries also act as an Uninterruptible Power Supply for the care home. The system is also connected to the national electricity grid, although we are trying to minimise \u2018grid export\u2019 as far as possible."
               ),
               _react2.default.createElement(
-                "img",
-                { className: "aboutImg" },
-                " "
+                "p",
+                null,
+                "We expect that 50% of the care home\u2019s electricity demand will be met through the new renewable energy system, whilst the electric car will be fully charged by the solar pv on most days. Live data from the system is shown in the dynamic schematic on this website."
+              )
+            ),
+            _react2.default.createElement(
+              "div",
+              { className: "modal-header" },
+              _react2.default.createElement(
+                "h4",
+                { className: "modal-title" },
+                "Could we Follow Suit?"
+              )
+            ),
+            _react2.default.createElement(
+              "div",
+              { className: "modal-body", id: "aboutText2" },
+              _react2.default.createElement(
+                "p",
+                null,
+                "The Broom Court project brings together relatively mature technologies into a system configuration. Solar PV and electric cars are now established technologies that can be highly cost effective in environments that require fairly heavy and consistent use of electricity and vehicles, such as care homes. The most novel technology in our system, battery storage, is rapidly reducing in price and is the key to providing a genuine local energy system, as excesses and shortfalls in energy generation can be smoothed out."
               ),
               _react2.default.createElement(
-                "img",
-                { className: "aboutImg" },
-                " "
+                "p",
+                null,
+                "Due to high costs of battery storage at present some grant funding was required to make this project financially viable. However, the costs reductions of battery technology are expected to be tremendous over the next few years, as they have been for solar pv over the past 10 years. Very soon projects like ours will financially viable in a range of settings such as ours. "
               ),
               _react2.default.createElement(
-                "img",
-                { className: "aboutImg" },
-                " "
+                "p",
+                null,
+                "Please do get in touch to find out more about our project journey and how you can follow a similar path."
+              ),
+              _react2.default.createElement(
+                "button",
+                { type: "button", className: "", "data-dismiss": "modal" },
+                "Close"
               )
             )
           )
@@ -11195,11 +11213,10 @@ function charger(data) {
     state = 'charger';
   }
   return state;
-  console.log(state);
 }
 
 function textConstructor(data) {
-  return data.toFixed(0) + " kW";
+  return data.toFixed(0) + " W";
 }
 
 var mainColors = { yellow: '#DAD34A', green: '#8BC53F', greenblue: '#02968C', blue: "#2E3191", red: '#ee0000' };
@@ -11209,8 +11226,12 @@ var Animation = _react2.default.createClass({
 
   getInitialState: function getInitialState() {
     return {
-      consumption: "- kW",
-      batteryState: "20",
+      consumption: "- W",
+      generation: "- W",
+      batteryTitle: "-%",
+      kettles: "0 TVs!",
+      grid: '- W',
+
       generationColor: mainColors.blue,
       consumptionColor: mainColors.yellow,
       gridColor: mainColors.greenblue,
@@ -11231,25 +11252,28 @@ var Animation = _react2.default.createClass({
     this.setState({
       generation: textConstructor(data.SolarYield),
       consumption: textConstructor(data.PowerConsumption),
-      batteryflow: textConstructor(data.BatteryFlow),
-      grid: textConstructor(data.Grid),
+      kettles: Math.round(data.SolarYield / 162) + " TVs!",
 
-      gridTitle: data.Grid < 0 ? "Importing" : "Exporting",
-      batteryTitle: data.BatteryFlow < 0 ? "Discharging" : "Charging",
+      grid: textConstructor(data.Grid * -1),
 
-      gridColor: data.Grid < 0 ? mainColors.red : mainColors.greenblue,
-      batteryColor: data.BatteryFlow < 0 ? mainColors.red : mainColors.green,
+      gridTitle: data.Grid > 0 ? "Importing" : "Exporting",
+      batteryTitle: Math.round(data.BatteryStatus) + "%",
 
-      batteryStatus: data.BatteryStatus * 0.42,
-      batteryState: charger(data.BatteryFlow),
+      gridColor: data.Grid > 0 ? mainColors.red : mainColors.greenblue,
+      batteryColor: data.BatteryStatus < 50 ? mainColors.red : mainColors.green,
+
+      batteryStatus: data.BatteryStatus / 100 * 42,
       generationState: charger(data.SolarYield),
       consumptionState: charger(data.PowerConsumption),
       gridState: charger(data.Grid),
-      sunState: data.SolarYield <= 0 ? " " : "sunpulse"
+      sunState: data.SolarYield <= 0 ? " " : "sunpulse",
+      date: data.UnixTime
     });
   },
 
   render: function render() {
+    var timestamp = new Date(this.state.date * 1000);
+    var date = 'Last update: ' + timestamp.toLocaleString("en-GB");
     return _react2.default.createElement(
       'svg',
       { id: 'animation', width: '960px', height: '600px', viewBox: '0 0 960 610', preserveAspectRatio: 'none', style: background },
@@ -11272,8 +11296,9 @@ var Animation = _react2.default.createClass({
       _react2.default.createElement(_Sun2.default, { sunPulse: this.state.sunState }),
       _react2.default.createElement(_TextUpdate2.default, {
         generation: this.state.generation,
+        kettles: this.state.kettles,
         consumption: this.state.consumption,
-        batteryflow: this.state.batteryflow,
+
         grid: this.state.grid,
 
         gridTitle: this.state.gridTitle,
@@ -11287,12 +11312,12 @@ var Animation = _react2.default.createClass({
       _react2.default.createElement(_Paths2.default, {
         generationColor: this.state.generationColor,
         consumptionColor: this.state.consumptionColor,
-        batteryColor: this.state.batteryColor,
         gridColor: this.state.gridColor,
+        batteryColor: this.state.batteryColor,
 
         generationState: this.state.generationState,
         consumptionState: this.state.consumptionState,
-        batteryState: this.state.batteryState,
+
         gridState: this.state.gridState
       }),
       _react2.default.createElement(
@@ -11302,6 +11327,11 @@ var Animation = _react2.default.createClass({
         _react2.default.createElement(_LampIcon2.default, { charge: this.state.consumptionState }),
         _react2.default.createElement(_BatteryIcon2.default, { charge: this.state.batteryStatus, colorChange: this.state.batteryColor }),
         _react2.default.createElement(_GridIcon2.default, { charge: this.state.gridState, colorChange: this.state.gridColor })
+      ),
+      _react2.default.createElement(
+        'text',
+        { x: '20', y: '600' },
+        date
       )
     );
   }
@@ -11824,7 +11854,7 @@ var Paths = _react2.default.createClass({
       _react2.default.createElement("line", { id: "generationSt", className: this.props.generationState, stroke: this.props.generationColor, x1: "305", y1: "268.59", x2: "305", y2: "152.09" }),
       _react2.default.createElement("polyline", { id: "pathConsumption", className: this.props.consumptionState, stroke: this.props.consumptionColor, points: "317.5,159.33 432,159.33 432,474 445.75,474 \t" }),
       _react2.default.createElement("line", { id: "pathGrid", className: this.props.gridState, stroke: this.props.gridColor, x1: "317.5", y1: "145.33", x2: "854.66", y2: "145.33" }),
-      _react2.default.createElement("polyline", { id: "pathBattery", className: this.props.batteryState, stroke: this.props.batteryColor, points: "317.5,152.09 671.23,152.09 671.23,317 \t" }),
+      _react2.default.createElement("polyline", { id: "pathBattery", className: "", stroke: this.props.batteryColor, points: "317.5,152.09 671.23,152.09 671.23,317 \t" }),
       _react2.default.createElement("rect", { id: "eCenter", x: "292.5", y: "139.59", className: "grey", width: "25", height: "25" }),
       _react2.default.createElement("line", { id: "pathConsumption_2", className: this.props.consumptionState, stroke: this.props.consumptionColor, x1: "432", y1: "356.93", x2: "447", y2: "356.93" })
     );
@@ -11881,103 +11911,92 @@ var _react2 = _interopRequireDefault(_react);
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
-function _defineProperty(obj, key, value) { if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }
-
 var TextUpdate = _react2.default.createClass({
-  displayName: "TextUpdate",
+  displayName: 'TextUpdate',
+
 
   render: function render() {
-    var _React$createElement;
-
+    var textKettles = 'power ' + this.props.kettles;
+    console.log(textKettles);
     return _react2.default.createElement(
-      "g",
-      { id: "text" },
+      'g',
+      { id: 'text' },
       _react2.default.createElement(
-        "g",
-        null,
+        'g',
+        { id: 'Generation', transform: 'matrix(1 0 0 1 173 70)' },
         _react2.default.createElement(
-          "text",
-          { id: "XMLID_38_", transform: "matrix(1 0 0 1 199.4456 55.9266)", className: "grey" },
-          "Solar PV"
+          'text',
+          { id: 'XMLID_38_', className: 'grey' },
+          'Solar PV'
         ),
         _react2.default.createElement(
-          "text",
-          { id: "generationNum", transform: "matrix(1 0 0 1 173.8071 104.9266)", className: "textControl", fill: this.props.generationColor },
+          'text',
+          { id: 'generationNum', y: '50', className: 'textControl', fill: this.props.generationColor },
           this.props.generation
         ),
         _react2.default.createElement(
-          "text",
-          { id: "XMLID_40_", transform: "matrix(1 0 0 1 165.8169 123.9266)" },
-          _react2.default.createElement(
-            "tspan",
-            { x: "0", y: "0", className: "st14 st15 st16" },
-            "That\u2019s enough to power"
-          ),
-          _react2.default.createElement(
-            "tspan",
-            { x: "37.36", y: "16.8", "class": "st14 st15 st16" },
-            "200 kettles!"
-          )
+          'text',
+          { id: 'XMLID_40_', y: '70' },
+          'That\u2019s enough to '
+        ),
+        _react2.default.createElement(
+          'text',
+          { id: 'XMLID_40_', y: '85' },
+          textKettles
         )
       ),
       _react2.default.createElement(
-        "g",
-        { id: "PowerConsumption" },
-        _react2.default.createElement("rect", { id: "XMLID_70_", x: "455", y: "173.59", className: "white", width: "111", height: "95" }),
+        'g',
+        { id: 'PowerConsumption', transform: 'matrix(1 0 0 1 460 180)' },
+        _react2.default.createElement('rect', { id: 'XMLID_70_', x: '-10', y: '-20', className: 'white', width: '220', height: '80' }),
         _react2.default.createElement(
-          "text",
-          { id: "XMLID_74_", transform: "matrix(1 0 0 1 481.8515 197.593)", className: "grey" },
-          "Usage"
+          'text',
+          { id: 'XMLID_74_', className: 'grey' },
+          'Usage'
         ),
         _react2.default.createElement(
-          "text",
-          (_React$createElement = { id: "XMLID_73_", className: "yellow", transform: "matrix(1 0 0 1 460.6271 246.593)" }, _defineProperty(_React$createElement, "className", "textControl"), _defineProperty(_React$createElement, "fill", this.props.consumptionColor), _React$createElement),
+          'text',
+          { id: 'XMLID_73_', y: '45', className: 'yellow textControl', fill: this.props.consumptionColor },
           this.props.consumption
         )
       ),
       _react2.default.createElement(
-        "g",
-        { id: "chargeText" },
-        _react2.default.createElement("rect", { id: "XMLID_107_", x: "683.06", y: "173.59", className: "white", width: "111", height: "95" }),
+        'g',
+        { id: 'chargeText', transform: 'matrix(1 0 0 1 720 360)' },
         _react2.default.createElement(
-          "text",
-          { id: "XMLID_105_", transform: "matrix(1 0 0 1 697.5247 197.593)", className: "grey" },
+          'text',
+          { id: 'XMLID_95_', transform: 'matrix(1 0 0 1 0 0)', className: 'textControl', fill: this.props.batteryColor },
           this.props.batteryTitle
-        ),
-        _react2.default.createElement(
-          "text",
-          { id: "XMLID_95_", transform: "matrix(1 0 0 1 688.6899 246.593)", className: "textControl", fill: this.props.batteryColor },
-          this.props.batteryflow
         )
       ),
       _react2.default.createElement(
-        "g",
-        { id: "exportText" },
+        'g',
+        { id: 'exportText', transform: 'matrix(1 0 0 1 525 70)' },
         _react2.default.createElement(
-          "text",
-          { id: "XMLID_80_", transform: "matrix(1 0 0 1 525.6773 79.0931)", className: "grey" },
+          'text',
+          { id: 'XMLID_80_', className: 'grey' },
           this.props.gridTitle
         ),
         _react2.default.createElement(
-          "text",
-          { id: "XMLID_79_", transform: "matrix(1 0 0 1 505.3587 128.0931)", className: "textControl", fill: this.props.gridColor },
+          'text',
+          { id: 'XMLID_79_', y: '50', className: 'textControl', fill: this.props.gridColor },
           this.props.grid
         )
       ),
       _react2.default.createElement(
-        "text",
-        { id: "XMLID_282_", transform: "matrix(1 0 0 1 871.6614 205.343)", className: "greysmall" },
-        "Grid"
+        'text',
+        { id: 'XMLID_282_', transform: 'matrix(1 0 0 1 871.6614 205.343)', className: 'greysmall' },
+        'Grid'
       ),
       _react2.default.createElement(
-        "text",
-        { id: "XMLID_283_", transform: "matrix(1 0 0 1 375.703 526.593)", className: "greysmall" },
-        "EV charger"
+        'text',
+        { id: 'XMLID_283_', transform: 'matrix(1 0 0 1 430 530)', className: 'greysmall' },
+        'EV charger'
       ),
       _react2.default.createElement(
-        "text",
-        { id: "XMLID_284_", transform: "matrix(1 0 0 1 634.0457 417.5486)", className: "greysmall" },
-        "Batteries"
+        'text',
+        { id: 'XMLID_284_', transform: 'matrix(1 0 0 1 635 410)', className: 'greysmall' },
+        'Batteries'
       )
     );
   }
@@ -11993,7 +12012,7 @@ exports = module.exports = __webpack_require__(103)(undefined);
 
 
 // module
-exports.push([module.i, "body {\r\n\tfont-family: 'Raleway','Roboto', 'Helvetica Neue', 'Segoe UI', Helvetica, Arial, sans-serif;\r\n\tfont-size: 14px;\r\n\toverflow-x: hidden;\r\n\tcolor: #2a3237;\r\n\t-webkit-font-smoothing: antialiased;\r\n\t-moz-osx-font-smoothing: grayscale;\r\n}\r\n\r\n.text-white{\r\n    color:white;\r\n}\r\n\r\n.container{\r\n\tmargin: auto;\r\n\twidth:960px;\r\n}\r\n\r\n/*Header - Footer*/\r\nheader, footer {\r\n    background-color: #58585A;\r\n    border-radius: 15px;\r\n}\r\nheader{\r\n    text-align: center;\r\n    height: 140px;\r\n}\r\nfooter{\r\n    height: 60px;\r\n    padding-right: 20px;\r\n}\r\n/* Navbar*/\r\n.navbar{\r\n\t\tbackground-color: #fff;\r\n    margin-top: 10px;\r\n    border: none;\r\n}\r\n.navbar .navbar-nav {\r\n  display: inline-block;\r\n  float: none;\r\n  vertical-align: top;\r\n}\r\n.navbar .navbar-collapse {\r\n  text-align: center;\r\n}\r\n.navbar .navbar-nav>li{\r\n    border-right:solid 2px #777;\r\n    //width: 186px;\r\n}\r\n.navbar .navbar-nav>li:last-child {\r\n    border-right:solid 1px #fff;/* This will not give border to last li element */\r\n}\r\n.navbar-default .navbar-nav>li>a {\r\n    font-size: 24px;\r\n}\r\n\r\n/*----end----*/\r\n#svgContainer{\r\n\t/*background-image:url(\"../img/svg/backgound-image.jpg\");\r\n\tbackground-repeat:no-repeat;\r\n   background-size:cover;*/\r\n\r\n    height: auto;\r\n\t border: #231f20 solid 2px;\r\n\t border-radius: 15px;\r\n\t margin-bottom: 20px;\r\n\t display: inline-block;\r\n\tposition: relative;\r\n\twidth: 100%;\r\n\toverflow:visible;\r\n}\r\n#animation{\r\n\t border-radius: 15px;\r\n\tbackground-repeat:no-repeat;\r\nbackground-size:contain;\r\nbackground-position:center;\r\n\twidth:100%;\r\n\theight:auto;\r\n}\r\n/*-----svg -----*/\r\n.greysmall{\r\n\tfill:#231F20;\r\n\tfont-size:18px\r\n}\r\n.grey{\r\n\tfill:#6D6E70;\r\n\tfont-size:20px;\r\n}\r\n.textControl{\r\n\tfont-size:50px;\r\n\t-webkit-transition: 1s;\r\n -moz-transition: 1s;\r\n -o-transition: 1s;\r\n transition: 1s;\r\n\r\n}\r\n/* Plink - opacity */\r\n.charger{\r\n\t\tanimation: switch 1s infinite ease both;\r\n\t}\r\n\t@keyframes switch {\r\n\t  50% {\r\n\t    opacity: 0.4;\r\n\t  }\r\n\t}\r\n\r\n\t#EVcar,\r\n\t#bulb{\r\n\t\tfill:#DAD34A;\r\n\t}\r\n\t#pathConsumption{\r\n\t\tfill:none;\r\n\t\tstroke:#DAD34A;\r\n\t\tstroke-width:3;\r\n\t\tstroke-miterlimit:10;\r\n\t}\r\n#light{\r\n\topacity:0.3;\r\n\tfill:#FDF286;\r\n}\r\n\r\n.sunpulse{\r\n    transform-origin: 70px 63px;\r\n\t\tanimation: pulse 2s infinite ease both;\r\n\r\n\t}\r\n@keyframes pulse {\r\n\t0%{\r\n\t\ttransform: scale(0.5);\r\n\t\topacity: 0;\r\n\t}\r\n\t50%{\r\n\t\topacity: 0.1;\r\n\t}\r\n\t70%{\r\n\t\topacity: 0.09;\r\n\t}\r\n\t100%{\r\n\t\ttransform: scale(5);\r\n\t\topacity: 0;\r\n\t}\r\n\t}\r\n.white{\r\n\topacity:0.9;\r\n\tfill:#FFFFFF;\r\n}\r\n /* About section*/\r\n .btn-about{\r\n\t margin: 10px;\r\n }\r\n.aboutImg{\r\n\theight:100px;\r\n\twidth: 30%;\r\n\tpadding-right: 5%;\r\n\tbackground-color: grey;\r\n}\r\n\r\n#aboutText{\r\n\t//width:70%;\r\n}\r\n\r\n@media (max-width: 768px) {\r\n.container{\r\n\tmargin: 0;\r\n\twidth:100%;\r\n}\r\n    h3{\r\n        font-size: 20px;\r\n    }\r\n#logo-b{\r\n        height: 60px;\r\n    }\r\n    .navbar .navbar-nav>li{\r\n    border-right:none;\r\n}\r\n    .navbar .navbar-nav>li:last-child {\r\n    border-right:none;\r\n}\r\n}\r\n@media (max-width: 480px) {\r\n\th3{\r\n\t\t\tfont-size: 15px;\r\n\t}\r\n\t#logo-b{\r\n\t        height: 40px;\r\n\t    }\r\n\t\t\theader{\r\n\t\t\t\theight:80px;\r\n\t\t\t}\r\n\r\n}\r\n", ""]);
+exports.push([module.i, "body {\r\n\tfont-family: 'Raleway','Roboto', 'Helvetica Neue', 'Segoe UI', Helvetica, Arial, sans-serif;\r\n\tfont-size: 14px;\r\n\toverflow-x: hidden;\r\n\tcolor: #2a3237;\r\n\t-webkit-font-smoothing: antialiased;\r\n\t-moz-osx-font-smoothing: grayscale;\r\n}\r\n/*global*/\r\n.text-white{\r\n    color:white;\r\n}\r\n.modal-header{\r\n\tborder-top: 1px solid #eee;\r\n}\r\n\r\n.container{\r\n\tmargin: auto;\r\n\twidth:960px;\r\n}\r\n\r\n/*Header - Footer*/\r\nheader, footer {\r\n    background-color: #58585A;\r\n    border-radius: 15px;\r\n}\r\nheader{\r\n    text-align: center;\r\n    height: 140px;\r\n}\r\nfooter{\r\n    height: 60px;\r\n    padding-right: 20px;\r\n}\r\n/* Navbar*/\r\n.navbar{\r\n\t\tbackground-color: #fff;\r\n    margin-top: 10px;\r\n    border: none;\r\n}\r\n.navbar .navbar-nav {\r\n  display: inline-block;\r\n  float: none;\r\n  vertical-align: top;\r\n}\r\n.navbar .navbar-collapse {\r\n  text-align: center;\r\n}\r\n.navbar .navbar-nav>li{\r\n    border-right:solid 2px #777;\r\n    //width: 186px;\r\n}\r\n.navbar .navbar-nav>li:last-child {\r\n    border-right:solid 1px #fff;/* This will not give border to last li element */\r\n}\r\n.navbar-default .navbar-nav>li>a {\r\n    font-size: 24px;\r\n}\r\n\r\n/*----end----*/\r\n#svgContainer{\r\n\t/*background-image:url(\"../img/svg/backgound-image.jpg\");\r\n\tbackground-repeat:no-repeat;\r\n   background-size:cover;*/\r\n\r\n    height: auto;\r\n\t border: #231f20 solid 2px;\r\n\t border-radius: 15px;\r\n\t margin-bottom: 20px;\r\n\t display: inline-block;\r\n\tposition: relative;\r\n\twidth: 100%;\r\n\toverflow:visible;\r\n}\r\n#animation{\r\n\t border-radius: 15px;\r\n\tbackground-repeat:no-repeat;\r\nbackground-size:contain;\r\nbackground-position:center;\r\n\twidth:100%;\r\n\theight:auto;\r\n}\r\n/*-----svg -----*/\r\n.greysmall{\r\n\tfill:#231F20;\r\n\tfont-size:18px\r\n}\r\n.grey{\r\n\tfill:#6D6E70;\r\n\tfont-size:20px;\r\n}\r\n.textControl{\r\n\tfont-size:50px;\r\n\t-webkit-transition: 1s;\r\n -moz-transition: 1s;\r\n -o-transition: 1s;\r\n transition: 1s;\r\n\r\n}\r\n/* Plink - opacity */\r\n.charger{\r\n\t\tanimation: switch 1s infinite ease both;\r\n\t}\r\n\t@keyframes switch {\r\n\t  50% {\r\n\t    opacity: 0.4;\r\n\t  }\r\n\t}\r\n\r\n\t#EVcar,\r\n\t#bulb{\r\n\t\tfill:#DAD34A;\r\n\t}\r\n\t#pathConsumption{\r\n\t\tfill:none;\r\n\t\tstroke:#DAD34A;\r\n\t\tstroke-width:3;\r\n\t\tstroke-miterlimit:10;\r\n\t}\r\n#light{\r\n\topacity:0.3;\r\n\tfill:#FDF286;\r\n}\r\n\r\n.sunpulse{\r\n    transform-origin: 70px 63px;\r\n\t\tanimation: pulse 2s infinite ease both;\r\n\r\n\t}\r\n@keyframes pulse {\r\n\t0%{\r\n\t\ttransform: scale(0.5);\r\n\t\topacity: 0;\r\n\t}\r\n\t50%{\r\n\t\topacity: 0.1;\r\n\t}\r\n\t70%{\r\n\t\topacity: 0.09;\r\n\t}\r\n\t100%{\r\n\t\ttransform: scale(5);\r\n\t\topacity: 0;\r\n\t}\r\n\t}\r\n.white{\r\n\topacity:0.9;\r\n\tfill:#FFFFFF;\r\n}\r\n /* About section*/\r\n .btn-about{\r\n\t margin: 10px;\r\n }\r\n.aboutImg{\r\n\theight:100px;\r\n\twidth: 30%;\r\n\tpadding-right: 5%;\r\n\tbackground-color: grey;\r\n}\r\n\r\n#aboutText{\r\n\t//width:70%;\r\n}\r\n\r\n@media (max-width: 768px) {\r\n.container{\r\n\tmargin: 0;\r\n\twidth:100%;\r\n}\r\n    h3{\r\n        font-size: 20px;\r\n    }\r\n#logo-b{\r\n        height: 60px;\r\n    }\r\n    .navbar .navbar-nav>li{\r\n    border-right:none;\r\n}\r\n    .navbar .navbar-nav>li:last-child {\r\n    border-right:none;\r\n}\r\n}\r\n@media (max-width: 480px) {\r\n\th3{\r\n\t\t\tfont-size: 15px;\r\n\t}\r\n\t#logo-b{\r\n\t        height: 40px;\r\n\t    }\r\n\t\t\theader{\r\n\t\t\t\theight:80px;\r\n\t\t\t}\r\n\r\n}\r\n", ""]);
 
 // exports
 

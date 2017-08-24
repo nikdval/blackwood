@@ -9,6 +9,7 @@ Grey fleet to green fleet
 /*install packages*/
 4. cd (go to the saved folder greewood)
 5. pip install -r requirements.txt
+6. pip install requests
 
 /*alternative manually*/
 pip install flask-socketio
