@@ -22,15 +22,17 @@ pip install requests
 
 //open react
 9. cd react-flask
-10. npm start or npm run dev (developer mode)
+10. npm start or
+    npm run dev (developer mode) or
+    npm run deploy (for deployment)
 11. open http://localhost:8080/ in the browser. an error should occure because the websocket server isn't opened
 
-//open websocket
+//open websocket //--not need if it runs the deploy or dev mode --
 12. Open new terminal and activate virtual environment
 13. cd (to the greenwood folder)
 14. python socket_time_test10.py
 
-//open webpack --watch
+//open webpack --watch //--not need if it runs the deploy or dev mode --
 15. Open new terminal
 16. Open vistual eneviroment
 17. cd (to the react-flask folder)
