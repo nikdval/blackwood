@@ -11377,7 +11377,7 @@ var _react = __webpack_require__(5);
 
 var _react2 = _interopRequireDefault(_react);
 
-var _scene = __webpack_require__(186);
+var _scene = __webpack_require__(119);
 
 var _scene2 = _interopRequireDefault(_scene);
 
@@ -11385,7 +11385,7 @@ var _solaredge = __webpack_require__(120);
 
 var _solaredge2 = _interopRequireDefault(_solaredge);
 
-var _victornEnergyLogo = __webpack_require__(185);
+var _victornEnergyLogo = __webpack_require__(121);
 
 var _victornEnergyLogo2 = _interopRequireDefault(_victornEnergyLogo);
 
@@ -11403,7 +11403,7 @@ var Footer = _react2.default.createClass({
         null,
         _react2.default.createElement(
           'div',
-          { className: 'col-md-6', id: 'scene' },
+          { className: 'col-md-6 col-sm-6', id: 'scene' },
           _react2.default.createElement(
             'p',
             { className: ' text-white' },
@@ -11412,12 +11412,12 @@ var Footer = _react2.default.createClass({
           _react2.default.createElement(
             'a',
             { href: 'http://scene.community/', target: '_blank' },
-            _react2.default.createElement('img', { className: '', src: _scene2.default, id: 'logo-Scene', alt: '', height: '50px' })
+            _react2.default.createElement('img', { className: '', src: _scene2.default, id: 'logo-Scene', alt: '' })
           )
         ),
         _react2.default.createElement(
           'div',
-          { className: 'col-md-6', id: 'dataLogo' },
+          { className: 'col-md-6 col-sm-6', id: 'dataLogo' },
           _react2.default.createElement(
             'p',
             { className: ' text-white' },
@@ -11430,7 +11430,7 @@ var Footer = _react2.default.createClass({
           ),
           _react2.default.createElement(
             'a',
-            { href: 'https://www.victronenergy.com/', target: '_blank' },
+            { href: 'https://www.solaredge.com/', target: '_blank' },
             _react2.default.createElement('img', { className: 'logoSup', src: _solaredge2.default, id: 'SolarEdge', alt: '' })
           )
         )
@@ -11456,7 +11456,7 @@ var _react = __webpack_require__(5);
 
 var _react2 = _interopRequireDefault(_react);
 
-var _companyLogo = __webpack_require__(119);
+var _companyLogo = __webpack_require__(118);
 
 var _companyLogo2 = _interopRequireDefault(_companyLogo);
 
@@ -12043,7 +12043,7 @@ exports = module.exports = __webpack_require__(103)(undefined);
 
 
 // module
-exports.push([module.i, "body {\r\n\tfont-family: 'Raleway','Roboto', 'Helvetica Neue', 'Segoe UI', Helvetica, Arial, sans-serif;\r\n\tfont-size: 14px;\r\n\toverflow-x: hidden;\r\n\tcolor: #2a3237;\r\n\t-webkit-font-smoothing: antialiased;\r\n\t-moz-osx-font-smoothing: grayscale;\r\n}\r\n/*global*/\r\n.text-white{\r\n    color:white;\r\n}\r\n.modal-header{\r\n\tborder-top: 1px solid #eee;\r\n}\r\n\r\n.container{\r\n\tmargin: auto;\r\n\twidth:960px;\r\n}\r\n\r\n/*Header - Footer*/\r\nheader, footer {\r\n    /*background-color: #58585A;*/\r\n\t\tbackground-color: #939393;\r\n    border-radius: 15px;\r\n}\r\nheader{\r\n    text-align: center;\r\n    height: 140px;\r\n}\r\nfooter{\r\n    height: 100px;\r\n    padding: 10px;\r\n}\r\n.logoSup{\r\n\theight: 35px;\r\n\tmargin-right: 8%;\r\n}\r\n/* Navbar*/\r\n.navbar{\r\n\t\tbackground-color: #fff;\r\n    margin-top: 10px;\r\n    border: none;\r\n}\r\n.navbar .navbar-nav {\r\n  display: inline-block;\r\n  float: none;\r\n  vertical-align: top;\r\n}\r\n.navbar .navbar-collapse {\r\n  text-align: center;\r\n}\r\n.navbar .navbar-nav>li{\r\n    border-right:solid 2px #777;\r\n    //width: 186px;\r\n}\r\n.navbar .navbar-nav>li:last-child {\r\n    border-right:solid 1px #fff;/* This will not give border to last li element */\r\n}\r\n.navbar-default .navbar-nav>li>a {\r\n    font-size: 24px;\r\n}\r\n\r\n/*----end----*/\r\n#svgContainer{\r\n\t/*background-image:url(\"../img/svg/backgound-image.jpg\");\r\n\tbackground-repeat:no-repeat;\r\n   background-size:cover;*/\r\n\r\n    height: auto;\r\n\t border: #231f20 solid 2px;\r\n\t border-radius: 15px;\r\n\t margin-bottom: 20px;\r\n\t display: inline-block;\r\n\tposition: relative;\r\n\twidth: 100%;\r\n\toverflow:visible;\r\n}\r\n#animation{\r\n\t border-radius: 15px;\r\n\tbackground-repeat:no-repeat;\r\nbackground-size:contain;\r\nbackground-position:center;\r\n\twidth:100%;\r\n\theight:auto;\r\n}\r\n/*-----svg -----*/\r\n.greysmall{\r\n\tfill:#231F20;\r\n\tfont-size:18px\r\n}\r\n.grey{\r\n\tfill:#6D6E70;\r\n\tfont-size:20px;\r\n}\r\n.textControl{\r\n\tfont-size:50px;\r\n\t-webkit-transition: 1s;\r\n -moz-transition: 1s;\r\n -o-transition: 1s;\r\n transition: 1s;\r\n\r\n}\r\n/* Plink - opacity */\r\n.charger{\r\n\t\tanimation: switch 1s infinite ease both;\r\n\t}\r\n\t@keyframes switch {\r\n\t  50% {\r\n\t    opacity: 0.4;\r\n\t  }\r\n\t}\r\n\r\n\t#EVcar,\r\n\t#bulb{\r\n\t\tfill:#DAD34A;\r\n\t}\r\n\t#pathConsumption{\r\n\t\tfill:none;\r\n\t\tstroke:#DAD34A;\r\n\t\tstroke-width:3;\r\n\t\tstroke-miterlimit:10;\r\n\t}\r\n#light{\r\n\topacity:0.3;\r\n\tfill:#FDF286;\r\n}\r\n\r\n.sunpulse{\r\n    transform-origin: 70px 63px;\r\n\t\tanimation: pulse 2s infinite ease both;\r\n\r\n\t}\r\n@keyframes pulse {\r\n\t0%{\r\n\t\ttransform: scale(0.5);\r\n\t\topacity: 0;\r\n\t}\r\n\t50%{\r\n\t\topacity: 0.1;\r\n\t}\r\n\t70%{\r\n\t\topacity: 0.09;\r\n\t}\r\n\t100%{\r\n\t\ttransform: scale(5);\r\n\t\topacity: 0;\r\n\t}\r\n\t}\r\n.white{\r\n\topacity:0.9;\r\n\tfill:#FFFFFF;\r\n}\r\n /* About section*/\r\n .btn-about{\r\n\t margin: 10px;\r\n }\r\n.aboutImg{\r\n\theight:100px;\r\n\twidth: 30%;\r\n\tpadding-right: 5%;\r\n\tbackground-color: grey;\r\n}\r\n\r\n#aboutText{\r\n\t//width:70%;\r\n}\r\n\r\n@media (max-width: 768px) {\r\n.container{\r\n\tmargin: 0;\r\n\twidth:100%;\r\n}\r\n    h3{\r\n        font-size: 20px;\r\n    }\r\n.logoSup{\r\n        height: 30px;\r\n\t\t\t\t\r\n    }\r\n    .navbar .navbar-nav>li{\r\n    border-right:none;\r\n}\r\n    .navbar .navbar-nav>li:last-child {\r\n    border-right:none;\r\n}\r\n}\r\n@media (max-width: 480px) {\r\n\th3{\r\n\t\t\tfont-size: 15px;\r\n\t}\r\n\t.logoSup{\r\n\t        height: 20px;\r\n\t    }\r\n\t\t\theader{\r\n\t\t\t\theight:80px;\r\n\t\t\t}\r\n\r\n}\r\n", ""]);
+exports.push([module.i, "body {\r\n\tfont-family: 'Raleway','Roboto', 'Helvetica Neue', 'Segoe UI', Helvetica, Arial, sans-serif;\r\n\tfont-size: 14px;\r\n\toverflow-x: hidden;\r\n\tcolor: #2a3237;\r\n\t-webkit-font-smoothing: antialiased;\r\n\t-moz-osx-font-smoothing: grayscale;\r\n}\r\n/*global*/\r\n.text-white{\r\n    color:white;\r\n}\r\n.modal-header{\r\n\tborder-top: 1px solid #eee;\r\n}\r\n\r\n.container{\r\n\tmargin: auto;\r\n\twidth:960px;\r\n}\r\n\r\n/*Header - Footer*/\r\nheader, footer {\r\n    /*background-color: #58585A;*/\r\n\t\tbackground-color: #939393;\r\n    border-radius: 15px;\r\n}\r\nheader{\r\n    text-align: center;\r\n    height: 140px;\r\n}\r\nfooter{\r\n\tmin-height: 80px;\r\n\theight:auto;\r\n    padding: 10px;\r\n}\r\n.logoSup{\r\n\theight: 25px;\r\n\tmargin-right: 8%;\r\n}\r\n#logo-Scene{\r\n\theight: 35px;\r\n\tmargin-bottom: 10px;\r\n}\r\n/* Navbar*/\r\n.navbar{\r\n\t\tbackground-color: #fff;\r\n    margin-top: 10px;\r\n    border: none;\r\n}\r\n.navbar .navbar-nav {\r\n  display: inline-block;\r\n  float: none;\r\n  vertical-align: top;\r\n}\r\n.navbar .navbar-collapse {\r\n  text-align: center;\r\n}\r\n.navbar .navbar-nav>li{\r\n    border-right:solid 2px #777;\r\n    //width: 186px;\r\n}\r\n.navbar .navbar-nav>li:last-child {\r\n    border-right:solid 1px #fff;/* This will not give border to last li element */\r\n}\r\n.navbar-default .navbar-nav>li>a {\r\n    font-size: 24px;\r\n}\r\n\r\n/*----end----*/\r\n#svgContainer{\r\n\t/*background-image:url(\"../img/svg/backgound-image.jpg\");\r\n\tbackground-repeat:no-repeat;\r\n   background-size:cover;*/\r\n\r\n    height: auto;\r\n\t border: #231f20 solid 2px;\r\n\t border-radius: 15px;\r\n\t margin-bottom: 20px;\r\n\t display: inline-block;\r\n\tposition: relative;\r\n\twidth: 100%;\r\n\toverflow:visible;\r\n}\r\n#animation{\r\n\t border-radius: 15px;\r\n\tbackground-repeat:no-repeat;\r\nbackground-size:contain;\r\nbackground-position:center;\r\n\twidth:100%;\r\n\theight:auto;\r\n}\r\n/*-----svg -----*/\r\n.greysmall{\r\n\tfill:#231F20;\r\n\tfont-size:18px\r\n}\r\n.grey{\r\n\tfill:#6D6E70;\r\n\tfont-size:20px;\r\n}\r\n.textControl{\r\n\tfont-size:50px;\r\n\t-webkit-transition: 1s;\r\n -moz-transition: 1s;\r\n -o-transition: 1s;\r\n transition: 1s;\r\n\r\n}\r\n/* Plink - opacity */\r\n.charger{\r\n\t\tanimation: switch 1s infinite ease both;\r\n\t}\r\n\t@keyframes switch {\r\n\t  50% {\r\n\t    opacity: 0.4;\r\n\t  }\r\n\t}\r\n\r\n\t#EVcar,\r\n\t#bulb{\r\n\t\tfill:#DAD34A;\r\n\t}\r\n\t#pathConsumption{\r\n\t\tfill:none;\r\n\t\tstroke:#DAD34A;\r\n\t\tstroke-width:3;\r\n\t\tstroke-miterlimit:10;\r\n\t}\r\n#light{\r\n\topacity:0.3;\r\n\tfill:#FDF286;\r\n}\r\n\r\n.sunpulse{\r\n    transform-origin: 70px 63px;\r\n\t\tanimation: pulse 2s infinite ease both;\r\n\r\n\t}\r\n@keyframes pulse {\r\n\t0%{\r\n\t\ttransform: scale(0.5);\r\n\t\topacity: 0;\r\n\t}\r\n\t50%{\r\n\t\topacity: 0.1;\r\n\t}\r\n\t70%{\r\n\t\topacity: 0.09;\r\n\t}\r\n\t100%{\r\n\t\ttransform: scale(5);\r\n\t\topacity: 0;\r\n\t}\r\n\t}\r\n.white{\r\n\topacity:0.9;\r\n\tfill:#FFFFFF;\r\n}\r\n /* About section*/\r\n .btn-about{\r\n\t margin: 10px;\r\n }\r\n.aboutImg{\r\n\theight:100px;\r\n\twidth: 30%;\r\n\tpadding-right: 5%;\r\n\tbackground-color: grey;\r\n}\r\n\r\n#aboutText{\r\n\t//width:70%;\r\n}\r\n\r\n@media (max-width: 768px) {\r\n.container{\r\n\tmargin: 0;\r\n\twidth:100%;\r\n}\r\n    h3{\r\n        font-size: 20px;\r\n    }\r\n.navbar .navbar-nav>li{\r\n    border-right:none;\r\n}\r\n    .navbar .navbar-nav>li:last-child {\r\n    border-right:none;\r\n}\r\n\r\n}\r\n@media (max-width: 480px) {\r\n\th3{\r\n\t\t\tfont-size: 15px;\r\n\t}\r\n\t.logoSup{\r\n\t\theight: 15px;\r\n\t\tmargin-right: 8%;\r\n\t}\r\n\t#logo-Scene{\r\n\t\theight: 25px;\r\n\r\n\t}\r\n\tfooter{\r\n\t\tmin-height: 80px;\r\n\t\theight:auto;\r\n\t}\r\n\t\t\theader{\r\n\t\t\t\theight:80px;\r\n\t\t\t}\r\n\r\n}\r\n", ""]);
 
 // exports
 
@@ -12812,11 +12812,16 @@ module.exports = toArray;
 /* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(0)))
 
 /***/ }),
-/* 118 */,
-/* 119 */
+/* 118 */
 /***/ (function(module, exports, __webpack_require__) {
 
 module.exports = __webpack_require__.p + "23e4ee861f92781db7d9af1ecd550740.png";
+
+/***/ }),
+/* 119 */
+/***/ (function(module, exports, __webpack_require__) {
+
+module.exports = __webpack_require__.p + "fb67e38047559b639c6469f088c256b6.png";
 
 /***/ }),
 /* 120 */
@@ -12825,7 +12830,12 @@ module.exports = __webpack_require__.p + "23e4ee861f92781db7d9af1ecd550740.png";
 module.exports = __webpack_require__.p + "045b62c6e40f1e65c8003f5ac3275ae9.svg";
 
 /***/ }),
-/* 121 */,
+/* 121 */
+/***/ (function(module, exports, __webpack_require__) {
+
+module.exports = __webpack_require__.p + "bb14d5073d0d585088e2f1bfb89efb00.png";
+
+/***/ }),
 /* 122 */
 /***/ (function(module, exports, __webpack_require__) {
 
@@ -21674,18 +21684,6 @@ if(false) {
 
 module.exports = __webpack_require__(87);
 
-
-/***/ }),
-/* 185 */
-/***/ (function(module, exports, __webpack_require__) {
-
-module.exports = __webpack_require__.p + "bb14d5073d0d585088e2f1bfb89efb00.png";
-
-/***/ }),
-/* 186 */
-/***/ (function(module, exports, __webpack_require__) {
-
-module.exports = __webpack_require__.p + "107dbaa5466c49f7ec3232b22c45cbb5.png";
 
 /***/ })
 /******/ ]);

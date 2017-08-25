@@ -9,14 +9,14 @@ var Footer = React.createClass({
     return (
       <div className='container' >
       <footer>
-      <div className="col-md-6" id="scene">
+      <div className="col-md-6 col-sm-6" id="scene">
         <p className=" text-white">Developed by: </p>
-        <a href="http://scene.community/" target="_blank" ><img className="" src={logoScene} id="logo-Scene" alt="" height="50px" /></a>
+        <a href="http://scene.community/" target="_blank" ><img className="" src={logoScene} id="logo-Scene" alt="" /></a>
       </div>
-      <div className="col-md-6" id="dataLogo">
+      <div className="col-md-6 col-sm-6" id="dataLogo">
         <p className=" text-white">Live data powered by: </p>
         <a href="https://www.victronenergy.com/" target="_blank" ><img className="logoSup" src={logoVictorn} id="logo-Victron" alt=""  /></a>
-          <a href="https://www.victronenergy.com/" target="_blank" ><img className="logoSup" src={logoSolarEdge} id="SolarEdge" alt="" /></a>
+          <a href="https://www.solaredge.com/" target="_blank" ><img className="logoSup" src={logoSolarEdge} id="SolarEdge" alt="" /></a>
       </div>
   </footer>
       </div>

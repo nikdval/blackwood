@@ -30,12 +30,17 @@ header{
     height: 140px;
 }
 footer{
-    height: 100px;
+	min-height: 80px;
+	height:auto;
     padding: 10px;
 }
 .logoSup{
-	height: 35px;
+	height: 25px;
 	margin-right: 8%;
+}
+#logo-Scene{
+	height: 35px;
+	margin-bottom: 10px;
 }
 /* Navbar*/
 .navbar{
@@ -175,24 +180,30 @@ background-position:center;
     h3{
         font-size: 20px;
     }
-.logoSup{
-        height: 30px;
-				
-    }
-    .navbar .navbar-nav>li{
+.navbar .navbar-nav>li{
     border-right:none;
 }
     .navbar .navbar-nav>li:last-child {
     border-right:none;
 }
+
 }
 @media (max-width: 480px) {
 	h3{
 			font-size: 15px;
 	}
 	.logoSup{
-	        height: 20px;
-	    }
+		height: 15px;
+		margin-right: 8%;
+	}
+	#logo-Scene{
+		height: 25px;
+
+	}
+	footer{
+		min-height: 80px;
+		height:auto;
+	}
 			header{
 				height:80px;
 			}
