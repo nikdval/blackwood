@@ -11,6 +11,9 @@ def get_solar_yield():
     #payload = {'api_key':api_key, 'startTime':Time, 'endTime':Time, 'timeUnit':'QUARTER_OF_AN_HOUR'}
     r_SY = requests.get(url_SY).json()
     solarYieldMath = r_SY['power']['values'][-1]['value']
+    print(type(solarYieldMath))
+    if solarYieldMath is None:
+        solarYieldMath = 0
     return solarYieldMath
 
 
@@ -28,5 +31,11 @@ def get_stats():
     powerConsumptionMath = r_Stats['records']['a1'][-1][-1] + r_Stats['records']['a2'][-1][-1] + r_Stats['records']['a3'][-1][-1]
     gridMath = r_Stats['records']['g1'][-1][-1] + r_Stats['records']['g2'][-1][-1] + r_Stats['records']['g3'][-1][-1]
     batteryStatusMath = r_Stats['records']['bs'][-1][1]
+    if powerConsumptionMath is None:
+        powerConsumptionMath = 0
+    if gridMath is None:
+        gridMath = 0
+    if batteryStatusMath is None:
+        batteryStatusMath = 0
     stats = [powerConsumptionMath, gridMath, batteryStatusMath]
     return stats

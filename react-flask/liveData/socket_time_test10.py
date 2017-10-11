@@ -32,7 +32,7 @@ def new_client(client, server):
         json_data = json.dumps(data)
         server.send_message_to_all(json_data)
         print("message_sent")
-        #print(json_data)
+        print(json_data)
         sleep(3000)
 
 
