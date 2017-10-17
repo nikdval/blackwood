@@ -5,9 +5,9 @@
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "dev": "npm start & webpack --watch & python liveData/socket_time_test10.py",
+    "dev": "npm start & webpack --watch",
     "build": "webpack -p",
-    "deploy":"npm start & python liveData/socket_time_test10.py" ,
+    "deploy":"npm start" ,
     "start": "python app.py"
   },
   "author": "",

@@ -6,11 +6,12 @@ from time import sleep
 import time
 import pdb
 from data_collection import get_solar_yield, get_stats
-
+import os
 import random
 
-
+# Called for every client connecting (after handshake)
 def new_client(client, server):
+    print("New client connected and was given id %d" % client['id'])
     data = {}
 
 
@@ -30,12 +31,16 @@ def new_client(client, server):
         data["SolarYield"] = solarYieldMath
 
         json_data = json.dumps(data)
-        server.send_message_to_all(json_data)
+        server.send_message(client,json_data)
         print("message_sent")
         print(json_data)
         sleep(3000)
 
+# Called for every client disconnecting
+def client_left(client, server):
+	print("Client(%d) disconnected" % client['id'])
 
-server = WebsocketServer(13254, host='127.0.0.1')
+port = int(os.environ.get("PORT", 5000))
+server = WebsocketServer(port, host='0.0.0.0')
 server.set_fn_new_client(new_client)
 server.run_forever()

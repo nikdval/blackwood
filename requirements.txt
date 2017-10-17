@@ -1,4 +1,0 @@
-flask-socketio
-git+https://github.com/Pithikos/python-websocket-server
-websocket-server
-requests

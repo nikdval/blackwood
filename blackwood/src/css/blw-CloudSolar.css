@@ -1,0 +1,211 @@
+body {
+	font-family: 'Raleway','Roboto', 'Helvetica Neue', 'Segoe UI', Helvetica, Arial, sans-serif;
+	font-size: 14px;
+	overflow-x: hidden;
+	color: #2a3237;
+	-webkit-font-smoothing: antialiased;
+	-moz-osx-font-smoothing: grayscale;
+}
+/*global*/
+.text-white{
+    color:white;
+}
+.modal-header{
+	border-top: 1px solid #eee;
+}
+
+.container{
+	margin: auto;
+	width:960px;
+}
+
+/*Header - Footer*/
+header, footer {
+    /*background-color: #58585A;*/
+		background-color: #939393;
+    border-radius: 15px;
+}
+header{
+    text-align: center;
+    height: 140px;
+}
+footer{
+	min-height: 80px;
+	height:auto;
+    padding: 10px;
+}
+.logoSup{
+	height: 25px;
+	margin-right: 8%;
+}
+#logo-Scene{
+	height: 35px;
+	margin-bottom: 10px;
+}
+/* Navbar*/
+.navbar{
+		background-color: #fff;
+    margin-top: 10px;
+    border: none;
+}
+.navbar .navbar-nav {
+  display: inline-block;
+  float: none;
+  vertical-align: top;
+}
+.navbar .navbar-collapse {
+  text-align: center;
+}
+.navbar .navbar-nav>li{
+    border-right:solid 2px #777;
+    //width: 186px;
+}
+.navbar .navbar-nav>li:last-child {
+    border-right:solid 1px #fff;/* This will not give border to last li element */
+}
+.navbar-default .navbar-nav>li>a {
+    font-size: 24px;
+}
+
+/*----end----*/
+#svgContainer{
+	/*background-image:url("../img/svg/backgound-image.jpg");
+	background-repeat:no-repeat;
+   background-size:cover;*/
+
+    height: auto;
+	 border: #231f20 solid 2px;
+	 border-radius: 15px;
+	 margin-bottom: 20px;
+	 display: inline-block;
+	position: relative;
+	width: 100%;
+	overflow:visible;
+}
+#animation{
+	 border-radius: 15px;
+	background-repeat:no-repeat;
+background-size:contain;
+background-position:center;
+	width:100%;
+	height:auto;
+}
+/*-----svg -----*/
+.greysmall{
+	fill:#231F20;
+	font-size:18px
+}
+.grey{
+	fill:#6D6E70;
+	font-size:20px;
+}
+.textControl{
+	font-size:50px;
+	-webkit-transition: 1s;
+ -moz-transition: 1s;
+ -o-transition: 1s;
+ transition: 1s;
+
+}
+/* Plink - opacity */
+.charger{
+		animation: switch 1s infinite ease both;
+	}
+	@keyframes switch {
+	  50% {
+	    opacity: 0.4;
+	  }
+	}
+
+	#EVcar,
+	#bulb{
+		fill:#DAD34A;
+	}
+	#pathConsumption{
+		fill:none;
+		stroke:#DAD34A;
+		stroke-width:3;
+		stroke-miterlimit:10;
+	}
+#light{
+	opacity:0.3;
+	fill:#FDF286;
+}
+
+.sunpulse{
+    transform-origin: 70px 63px;
+		animation: pulse 2s infinite ease both;
+
+	}
+@keyframes pulse {
+	0%{
+		transform: scale(0.5);
+		opacity: 0;
+	}
+	50%{
+		opacity: 0.1;
+	}
+	70%{
+		opacity: 0.09;
+	}
+	100%{
+		transform: scale(5);
+		opacity: 0;
+	}
+	}
+.white{
+	opacity:0.9;
+	fill:#FFFFFF;
+}
+ /* About section*/
+ .btn-about{
+	 margin: 10px;
+ }
+.aboutImg{
+	height:100px;
+	width: 30%;
+	padding-right: 5%;
+	background-color: grey;
+}
+
+#aboutText{
+	//width:70%;
+}
+
+@media (max-width: 768px) {
+.container{
+	margin: 0;
+	width:100%;
+}
+    h3{
+        font-size: 20px;
+    }
+.navbar .navbar-nav>li{
+    border-right:none;
+}
+    .navbar .navbar-nav>li:last-child {
+    border-right:none;
+}
+
+}
+@media (max-width: 480px) {
+	h3{
+			font-size: 15px;
+	}
+	.logoSup{
+		height: 15px;
+		margin-right: 8%;
+	}
+	#logo-Scene{
+		height: 25px;
+
+	}
+	footer{
+		min-height: 80px;
+		height:auto;
+	}
+			header{
+				height:80px;
+			}
+
+}

@@ -1,6 +1,2 @@
-.DS_Store
-venv
-react-flask/node_modules
-react-flask/static/bundle.js
-react-flask/static
-react-flask/liveData/__pycache__
+blackwood/node_modules
+blackwood-socket/liveData/__pycache__
