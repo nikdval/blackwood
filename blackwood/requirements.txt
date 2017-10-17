@@ -1,7 +1,3 @@
-flask-socketio
-git+https://github.com/Pithikos/python-websocket-server
-websocket-server
-requests
 Flask==0.10.1
 gunicorn
 itsdangerous==0.24
