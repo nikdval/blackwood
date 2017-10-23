@@ -161,13 +161,29 @@ background-position:center;
  .btn-about{
 	 margin: 10px;
  }
-.aboutImg{
-	height:100px;
-	width: 30%;
+ .modal-content{
+	// background-color: #939393;
+ }
+.dImg{
+	display: inline-block;
+	height:300px;
+	width: auto;
+	margin-bottom: 20px;
 	padding-right: 5%;
-	background-color: grey;
+	//background-color: grey;
 }
-
+#droneImg, #headerphotos{
+	background-color: white;
+}
+#droneImg{
+	width: 140%;
+	left:-20%;
+	position: fixed;
+}
+#exitBtn{
+	height: 20px;
+	margin-bottom: 20px;
+}
 #aboutText{
 	//width:70%;
 }
@@ -186,7 +202,14 @@ background-position:center;
     .navbar .navbar-nav>li:last-child {
     border-right:none;
 }
-
+#droneImg{
+	width: 100%;
+	left:0;
+}
+#exitBtn{
+	height: 20px;
+	margin-bottom: 10px;
+}
 }
 @media (max-width: 480px) {
 	h3{
@@ -196,6 +219,10 @@ background-position:center;
 		height: 15px;
 		margin-right: 8%;
 	}
+	.dImg{
+		height:150px;
+	}
+
 	#logo-Scene{
 		height: 25px;
 

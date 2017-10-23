@@ -7,7 +7,7 @@
 6 silly lifecycle greenFleet@1.1.0~prestart: no script for prestart, continuing
 7 info lifecycle greenFleet@1.1.0~start: greenFleet@1.1.0
 8 verbose lifecycle greenFleet@1.1.0~start: unsafe-perm in lifecycle true
-9 verbose lifecycle greenFleet@1.1.0~start: PATH: /usr/share/npm/bin/node-gyp-bin:/home/scene/Desktop/Scene-PC/liveblackwood/greenwood/react-flask/node_modules/.bin:/usr/share/npm/bin/node-gyp-bin:/home/scene/Desktop/Scene-PC/liveblackwood/greenwood/react-flask/node_modules/.bin:/home/scene/Desktop/Scene-PC/ve_blackwood/bin:/home/scene/bin:/home/scene/.local/bin:/home/scene/bin:/home/scene/.local/bin:/home/scene/bin:/home/scene/.local/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/snap/bin:/snap/bin:/snap/bin
+9 verbose lifecycle greenFleet@1.1.0~start: PATH: /usr/share/npm/bin/node-gyp-bin:/home/scene/Desktop/Scene-PC/liveblackwood/greenwood/react-flask/node_modules/.bin:/home/scene/bin:/home/scene/.local/bin:/home/scene/bin:/home/scene/.local/bin:/home/scene/bin:/home/scene/.local/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/snap/bin:/snap/bin:/snap/bin
 10 verbose lifecycle greenFleet@1.1.0~start: CWD: /home/scene/Desktop/Scene-PC/liveblackwood/greenwood/react-flask
 11 silly lifecycle greenFleet@1.1.0~start: Args: [ '-c', 'python app.py' ]
 12 silly lifecycle greenFleet@1.1.0~start: Returned: code: 1  signal: null
