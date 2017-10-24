@@ -2,6 +2,7 @@ import React from 'react';
 import logo from '../img/logo/company-logo.png';
 import Navbar from './Navbar.jsx';
 import About from './About.jsx';
+import Photos from './Photos.jsx';
 
 // create classes
 var Header = React.createClass({
@@ -9,8 +10,9 @@ var Header = React.createClass({
     return(
       <div className="container">
         <NavBrand linkTo={this.props.brand} />
-
+        <Photos />
         <About />
+
       </div>
     );
   }
