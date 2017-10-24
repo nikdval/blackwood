@@ -40,6 +40,7 @@ def new_client(client, server):
 def client_left(client, server):
 	print("Client(%d) disconnected" % client['id'])
 
+#for local run assign port variable to 5000 and change host to 127.0.0.1
 port = int(os.environ.get("PORT", 5000))
 server = WebsocketServer(port, host='0.0.0.0')
 server.set_fn_new_client(new_client)

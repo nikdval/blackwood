@@ -42,7 +42,7 @@ var TestData = React.createClass({
         };
     },
   componentDidMount: function() {
-      var connection = new WebSocket("ws://127.0.0.1:13254/");
+      var connection = new WebSocket("wss://blackwood-socket.herokuapp.com/");
       var that = this;
       connection.onmessage = function (e) {
           var jsonData = JSON.parse(e.data);

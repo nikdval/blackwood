@@ -9,7 +9,7 @@ module.exports = {
   output: {
     path: __dirname + '/static',
     filename: "bundle.js",
-    //publicPath:__dirname + '/static/'
+    //publicPath:'http://localhost:8080/'
     publicPath:'https://blackwood.herokuapp.com/'
   },
   module: {
